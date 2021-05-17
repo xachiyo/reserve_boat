@@ -1,0 +1,128 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.5
+-- https://www.phpmyadmin.net/
+--
+-- ホスト: localhost:8889
+-- 生成日時: 2021 年 5 月 17 日 16:07
+-- サーバのバージョン： 5.7.30
+-- PHP のバージョン: 7.4.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- データベース: `resv_boat`
+--
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `daily`
+--
+
+CREATE TABLE `daily` (
+  `id` int(3) NOT NULL,
+  `date` date DEFAULT NULL,
+  `menu_id` int(3) NOT NULL,
+  `captain` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `daily`
+--
+
+INSERT INTO `daily` (`id`, `date`, `menu_id`, `captain`) VALUES
+(1, '2021-05-17', 1, 'Aさん'),
+(2, '2021-05-19', 2, 'Bさん'),
+(3, '2021-05-22', 3, '太郎さん');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `menu`
+--
+
+CREATE TABLE `menu` (
+  `id` int(3) NOT NULL,
+  `menu_name` varchar(255) NOT NULL,
+  `max_pax` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `menu`
+--
+
+INSERT INTO `menu` (`id`, `menu_name`, `max_pax`) VALUES
+(1, '行き先1', 25),
+(2, '行き先2', 20),
+(3, '行き先3', 15);
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `reservation`
+--
+
+CREATE TABLE `reservation` (
+  `id` int(10) NOT NULL,
+  `date` date DEFAULT NULL,
+  `guest_pax` int(2) NOT NULL,
+  `staff_pax` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `reservation`
+--
+
+INSERT INTO `reservation` (`id`, `date`, `guest_pax`, `staff_pax`) VALUES
+(1, '2021-05-17', 8, 2),
+(2, '2021-05-17', 8, 2),
+(3, '2021-05-19', 1, 1),
+(4, '2021-05-17', 3, 2),
+(5, '2021-05-19', 11, 1),
+(6, '2021-05-22', 1, 1),
+(7, '2021-05-22', 4, 1);
+
+--
+-- ダンプしたテーブルのインデックス
+--
+
+--
+-- テーブルのインデックス `daily`
+--
+ALTER TABLE `daily`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- テーブルのインデックス `menu`
+--
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- テーブルのインデックス `reservation`
+--
+ALTER TABLE `reservation`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- ダンプしたテーブルのAUTO_INCREMENT
+--
+
+--
+-- テーブルのAUTO_INCREMENT `daily`
+--
+ALTER TABLE `daily`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- テーブルのAUTO_INCREMENT `menu`
+--
+ALTER TABLE `menu`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- テーブルのAUTO_INCREMENT `reservation`
+--
+ALTER TABLE `reservation`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;

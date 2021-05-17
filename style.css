@@ -1,0 +1,36 @@
+body {
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.fb {
+  display: flex;
+}
+
+.MB30 {
+  margin-bottom: 30px;
+}
+
+.display_none {
+  display: none;
+}
+
+.heading {
+  background-color: #a3efd5;
+}
+
+.table p {
+  width: 7em;
+}
+
+.top_page .table p:first-child,
+.resv_page .table > p {
+  width: 11em;
+}
+
+.red {
+  color: red;
+}
