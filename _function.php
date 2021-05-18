@@ -3,9 +3,11 @@
 // DB接続
 // ==============================
 function dbConnect(){
+  // 以下3行は自分の環境に合わせて変更してください
   $dsn = 'mysql:dbname=resv_boat;host=localhost;charset=utf8';
-  $user = 'root'; // DBのユーザー名
-  $password = 'root'; // DBのパスワード
+  $user = 'root'; // DBのユーザー名、初期設定では'root'
+  $password = 'root'; // DBのパスワード、初期設定では''(windows) / 'root'(mac)
+
   $options = array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_SILENT,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,

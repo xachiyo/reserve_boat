@@ -66,7 +66,7 @@
 
           let this_val = $('#' + this_id).val();
           let that_val = $('#' + that_id).val();
-          let total_val = this_val + that_val;
+          let total_val = Number(this_val) + Number(that_val);
 
           if($('#' + that_id).val() == 0) {
             $('.select_box#' + that_id + ' option').remove();
@@ -78,7 +78,7 @@
               $('#' + that_id).append($('<option>').html(i).val(i));
             }
           }
-            
+
           if(total_val > left_total)
             alert('定員を越えています。選択し直してください。');
         });
